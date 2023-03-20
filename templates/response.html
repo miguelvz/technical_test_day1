@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Response</title>
+</head>
+<body>
+    <h3>
+        URLs to validate:
+        {{ urls }}
+    </h3>
+    {% for tuple in validation_list %}
+        {% if tuple[1] == True%}
+            <p>Page {{tuple[0]}} is valid!</p>
+        {% else %}
+            <p>Page {{tuple[0]}} is not valid!</p>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
